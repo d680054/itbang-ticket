@@ -11,8 +11,7 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 @ConfigurationProperties
-//@PropertySource("file:${user.dir}/eventbrite.properties")
-@PropertySource("classpath:eventbrite.properties")
+@PropertySource("file:${user.dir}/bin/eventbrite.properties")
 public class EventbriteProp
 {
 	private String fullRunning;

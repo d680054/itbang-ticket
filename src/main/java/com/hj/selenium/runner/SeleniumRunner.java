@@ -48,7 +48,8 @@ public class SeleniumRunner implements ApplicationRunner
 	 */
 	private void initWebDriver() throws NoSuchFieldException, IllegalAccessException
 	{
-		String path = this.getClass().getClassLoader().getResource("geckodriver").getPath();
+		String path = System.getProperty("user.dir") + "/bin/geckodriver";
+		log.info("当前working path:"+ path);
 		System.setProperty("webdriver.gecko.driver", path);
 		FirefoxOptions options = new FirefoxOptions();
 		options.setAcceptInsecureCerts(false);
