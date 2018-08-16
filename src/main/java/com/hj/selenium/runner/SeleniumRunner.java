@@ -20,10 +20,17 @@ import java.util.logging.Level;
 @Component
 public class SeleniumRunner implements ApplicationRunner
 {
+	private static String OS = System.getProperty("os.name").toLowerCase();
+
 	@Autowired
 	private AutoProcessor autoProcessor;
 
 	private WebDriver driver;
+
+	public static boolean isWindows()
+	{
+		return (OS.indexOf("win") >= 0);
+	}
 
 	@Override public void run(ApplicationArguments args)
 	{
@@ -38,8 +45,8 @@ public class SeleniumRunner implements ApplicationRunner
 		}
 		finally
 		{
-//			if (driver != null)
-//				driver.close();
+			//			if (driver != null)
+			//				driver.close();
 		}
 	}
 
@@ -48,8 +55,9 @@ public class SeleniumRunner implements ApplicationRunner
 	 */
 	private void initWebDriver() throws NoSuchFieldException, IllegalAccessException
 	{
-		String path = System.getProperty("user.dir") + "/bin/geckodriver";
-		log.info("当前working path:"+ path);
+
+		String path = System.getProperty("user.dir") + "/bin/geckodriver" + (isWindows() ? ".exe" : "");
+		log.info("The current working path:" + path);
 		System.setProperty("webdriver.gecko.driver", path);
 		FirefoxOptions options = new FirefoxOptions();
 		options.setAcceptInsecureCerts(false);
