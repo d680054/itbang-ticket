@@ -8,21 +8,17 @@
 
 # 使用环境
 * Mac(10.13.6)+Firefox(61.0.1) 已测
-* Win10+Firefox        未测
+* Win10+Firefox(61.0.2)        已测
 
 # 使用方法
 ### 终端用户
-下载dist目录下的zip文件,解压后修改/bin/eventbrite.properties, 然后运行tickt.sh(Mac已测)或者ticket.bat(待完成)
+下载dist目录下的zip文件,解压后修改/bin/eventbrite.properties, mac用户运行sh tickt.sh, windows用户双击ticket.bat
 
 ### 开发人员
 下载源代码,导入到Intellij(需lombok插件)或Eclippse(未测过), 按照提示修改eventbrite.properties 
 运行spring-boot
 
 如需打包 运行 mvn clean package, 
-
-# 后续改进
-Mac版本已经打包,可以从dist下载直接使用
-Windows版本过几天完成
 
 # 框架描述
 一个com.hj.selenium包, 该框架会自动扫描含有@Page注解,完成与webdriver驱动的绑定
