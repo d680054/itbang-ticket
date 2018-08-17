@@ -14,6 +14,7 @@
             <excludes>
                 <exclude>*.bat</exclude>
                 <exclude>*.sh</exclude>
+                <exclude>*.jpg</exclude>
             </excludes>
         </fileSet>
         <fileSet>
@@ -22,6 +23,7 @@
             <includes>
                 <include>*.bat</include>
                 <include>*.sh</include>
+                <include>*.jpg</include>
             </includes>
         </fileSet>
         <fileSet>
