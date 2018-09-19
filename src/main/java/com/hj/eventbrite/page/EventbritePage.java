@@ -75,7 +75,7 @@ public class EventbritePage extends AbstractPage
 	 */
 	public String parseStartTime()
 	{
-		String timeReg = "[0-1]?[0-9]:[0-5][0-9]\\s+[A|P]M$";
+		String timeReg = "[0-1]?[0-9]:[0-5][0-9]\\s+[A|a|P|p][m|M]$";
 		Pattern p = Pattern.compile(timeReg);
 		Matcher m = p.matcher(notification.getText());
 		while (m.find())

@@ -49,7 +49,7 @@ public class AutoEventbritePayment implements AutoProcessor
 				eventbritePage.clickTicketBtn();
 				String startTimeStr = eventbritePage.parseStartTime();
 				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mm a");
-				LocalTime startTime = LocalTime.parse(startTimeStr, formatter);
+				LocalTime startTime = LocalTime.parse(startTimeStr.toUpperCase() , formatter);
 				long millis = Duration.between(LocalTime.now(), startTime).toMillis();
 				log.info("*******活动将于[" + startTime + "]开始,请等待[" + (millis / 60000) + "分钟后],系统会自动抢票");
 				log.info("*******等待中..., 请不要关闭本系统,抢票完毕会自动退出");
